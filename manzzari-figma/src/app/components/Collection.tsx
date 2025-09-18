@@ -1,6 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { Rye } from "next/font/google";
+
+// Rye font import
+const rye = Rye({
+  subsets: ["latin"],
+  weight: "400", // sirf 400 available hai
+});
 
 interface CardProps {
   name: string;
@@ -33,8 +40,10 @@ function Card({ name, price, image }: CardProps) {
 export default function Collection() {
   return (
     <section className="w-full py-28">
-      {/* Heading */}
-      <h1 className="text-3xl md:text-4xl font-semibold text-center mb-10">
+      {/* Heading - sirf yahan Rye font apply hoga */}
+      <h1
+        className={`text-3xl md:text-4xl font-semibold text-center mb-10 ${rye.className}`}
+      >
         Trendy Collection
       </h1>
 
@@ -47,39 +56,40 @@ export default function Collection() {
       </div>
 
       {/* Jewelry Section */}
-      <div className="flex justify-center items-center">
-        {/* Column 1 */}
-        <div className="w-[768px] h-[970px] flex items-center justify-center">
-          <Image
-            src="/images/lookbook-3.jpg.svg"
-            alt="Jewelry Left"
-            width={500}
-            height={500}
-            className="w-full h-full object-cover"
-          />
-        </div>
+<div className="flex flex-col md:flex-row justify-center items-stretch">
+  {/* Column 1 */}
+  <div className="w-full md:w-1/3 min-h-[400px] flex items-center justify-center">
+    <Image
+      src="/images/lookbook-3.jpg.svg"
+      alt="Jewelry Left"
+      width={500}
+      height={500}
+      className="w-full h-full object-cover"
+    />
+  </div>
 
-        {/* Column 2 */}
-        <div className="w-[768px] h-[970px] bg-[#938965] flex flex-col items-center justify-center text-center">
-          <h1 className="text-white text-4xl font-bold mb-6">
-            Jewelry for Every Occasion
-          </h1>
-          <button className="bg-white text-[#938965] px-6 py-3 font-semibold rounded-lg shadow-md hover:scale-105 transition">
-            Shop Now
-          </button>
-        </div>
+  {/* Column 2 */}
+  <div className="w-full md:w-1/3 min-h-[400px] bg-[#938965] flex flex-col items-center justify-center text-center p-6">
+    <h1 className="text-white text-2xl md:text-4xl font-bold mb-6">
+      Jewelry for Every Occasion
+    </h1>
+    <button className="bg-white text-[#938965] px-6 py-3 font-semibold rounded-lg shadow-md hover:scale-105 transition">
+      Shop Now
+    </button>
+  </div>
 
-        {/* Column 3 */}
-        <div className="w-[768px] h-[970px] bg-[#938965] flex items-center justify-center">
-          <Image
-            src="/images/banner-30.jpg.png"
-            alt="Jewelry Right"
-            width={500}
-            height={500}
-            className="object-contain"
-          />
-        </div>
-      </div>
+  {/* Column 3 */}
+  <div className="w-full md:w-1/3 min-h-[400px] bg-[#938965] flex items-center justify-center">
+    <Image
+      src="/images/banner-30.jpg.png"
+      alt="Jewelry Right"
+      width={500}
+      height={500}
+      className="object-contain transform transition-transform duration-300 hover:scale-105 cursor-pointer"
+    />
+  </div>
+</div>
+
     </section>
   );
 }

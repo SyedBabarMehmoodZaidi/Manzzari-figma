@@ -1,6 +1,15 @@
+"use client";
 import React from "react";
 import Image from "next/image";
+import { Rye } from "next/font/google";
 
+// Rye font import
+const rye = Rye({
+  subsets: ["latin"],
+  weight: "400", // sirf 400 available hai
+});
+
+// Card component
 function Card({ icon, title, desc }: { icon: string; title: string; desc: string }) {
   return (
     <div className="w-full sm:w-[300px] bg-white p-6 flex flex-col items-center text-center rounded-lg shadow-md transform transition-transform hover:scale-105">
@@ -17,12 +26,12 @@ export default function Category() {
   return (
     <div className="px-8 py-12">
       {/* Heading */}
-      <h1 className="text-4xl font-bold text-center mb-8">
+      <h1 className={`text-4xl font-bold text-center mb-8 ${rye.className}`}>
         Shop By Categories
       </h1>
 
       {/* Buttons */}
-      <div className="flex justify-center flex-wrap gap-12 mb-12">
+      <div className="flex justify-center flex-wrap text-[#0000009E] gap-12 mb-12">
         <button className="text-xl font-medium">EARINGS</button>
         <button className="text-xl font-medium">NECKLACE</button>
         <button className="text-xl font-medium">BRACLET</button>
@@ -32,7 +41,7 @@ export default function Category() {
       {/* Image Grid */}
       <div className="flex flex-wrap justify-center gap-6 mb-16">
         {/* Row 1 */}
-        <div className="w-[893px] h-[582px] relative">
+        <div className="w-[893px] h-[582px] relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
           <Image
             src="/images/img1.png"
             alt="Category 1"
@@ -40,7 +49,7 @@ export default function Category() {
             className="object-cover rounded-lg"
           />
         </div>
-        <div className="w-[438px] h-[581px] relative">
+        <div className="w-[438px] h-[581px] relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
           <Image
             src="/images/img2.png"
             alt="Category 2"
@@ -48,7 +57,7 @@ export default function Category() {
             className="object-cover rounded-lg"
           />
         </div>
-        <div className="w-[438px] h-[581px] relative">
+        <div className="w-[438px] h-[581px] relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
           <Image
             src="/images/img3.png"
             alt="Category 3"
@@ -58,7 +67,7 @@ export default function Category() {
         </div>
 
         {/* Row 2 */}
-        <div className="w-[438px] h-[581px] relative">
+        <div className="w-[438px] h-[581px] relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
           <Image
             src="/images/img4.png"
             alt="Category 4"
@@ -66,7 +75,7 @@ export default function Category() {
             className="object-cover rounded-lg"
           />
         </div>
-        <div className="w-[438px] h-[581px] relative">
+        <div className="w-[438px] h-[581px] relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
           <Image
             src="/images/img5.png"
             alt="Category 5"
@@ -74,7 +83,7 @@ export default function Category() {
             className="object-cover rounded-lg"
           />
         </div>
-        <div className="w-[893px] h-[581px] relative">
+        <div className="w-[893px] h-[581px] relative transform transition-transform duration-300 hover:scale-105 cursor-pointer">
           <Image
             src="/images/img6.svg"
             alt="Category 6"
@@ -87,27 +96,25 @@ export default function Category() {
       {/* Cards Section */}
       <div className="flex flex-wrap justify-center gap-24">
         <div className="border border-gray-300">
-        <Card
-          icon="/images/Frame.png"
-          title="Shipping Worldwide"
-          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-        />
+          <Card
+            icon="/images/Frame.png"
+            title="Shipping Worldwide"
+            desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+          />
         </div>
         <div className="border border-gray-300">
-
-        <Card
-          icon="/images/Frame2.png"
-          title="14 Days Return"
-          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-        />
+          <Card
+            icon="/images/Frame2.png"
+            title="14 Days Return"
+            desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+          />
         </div>
         <div className="border border-gray-300">
-
-        <Card
-          icon="/images/Frame3.svg"
-          title="Security Payment"
-          desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
-        />
+          <Card
+            icon="/images/Frame3.svg"
+            title="Security Payment"
+            desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+          />
         </div>
       </div>
     </div>
