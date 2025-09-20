@@ -106,7 +106,7 @@ export default function Spotted() {
           </h1>
           <h3 className="text-sm text-gray-500 mb-3">Creative Director</h3>
           <p className="text-sm text-gray-700">
-            Emily’s refined taste shines through as she effortlessly blends
+            Emily&apos;s refined taste shines through as she effortlessly blends
             jewelry into her everyday wardrobe.
           </p>
         </div>
@@ -128,7 +128,7 @@ export default function Spotted() {
   <div className="w-full md:w-1/2 flex flex-col justify-center items-center text-center text-white p-8 md:p-16">
     <h1 className="text-4xl font-bold mb-6">ABOUT US</h1>
     <p className="mb-6 max-w-lg">
-      At Purity, we strive to deliver excellence, consistently. We've
+      At Purity, we strive to deliver excellence, consistently. We&apos;ve
       brought to the market a whole new standard of business ethics and
       product reliability.
     </p>
